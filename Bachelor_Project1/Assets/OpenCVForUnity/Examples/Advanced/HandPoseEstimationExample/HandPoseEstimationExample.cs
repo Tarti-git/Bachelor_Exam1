@@ -78,7 +78,7 @@ namespace OpenCVForUnityExample
         /// <summary>
         /// The number of fingers.
         /// </summary>
-        int numberOfFingers = 0;
+        public int numberOfFingers = 0;
 
         /// <summary>
         /// The webcam texture to mat helper.
