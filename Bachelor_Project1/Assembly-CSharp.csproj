@@ -51,12 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\button_pick.cs" />
+     <Compile Include="Assets\HandPoseEstimationExample.cs" />
      <Compile Include="Assets\movement.cs" />
      <Compile Include="Assets\OpenCVForUnity\Examples\Advanced\AlphaBlendingExample\AlphaBlendingExample.cs" />
      <Compile Include="Assets\OpenCVForUnity\Examples\Advanced\ComicFilterExample\ComicFilterExample.cs" />
      <Compile Include="Assets\OpenCVForUnity\Examples\Advanced\GreenScreenExample\GreenScreenExample.cs" />
      <Compile Include="Assets\OpenCVForUnity\Examples\Advanced\HandPoseEstimationExample\ColorBlobDetector.cs" />
-     <Compile Include="Assets\OpenCVForUnity\Examples\Advanced\HandPoseEstimationExample\HandPoseEstimationExample.cs" />
      <Compile Include="Assets\OpenCVForUnity\Examples\Advanced\MatToTextureInRenderThreadExample\MatToTextureInRenderThreadExample.cs" />
      <Compile Include="Assets\OpenCVForUnity\Examples\Advanced\MultiObjectTrackingBasedOnColorExample\ColorObject.cs" />
      <Compile Include="Assets\OpenCVForUnity\Examples\Advanced\MultiObjectTrackingBasedOnColorExample\MultiObjectTrackingBasedOnColorExample.cs" />
@@ -120,6 +121,8 @@
      <Compile Include="Assets\OpenCVForUnity\Examples\TouchController.cs" />
      <Compile Include="Assets\OpenCVForUnity\org\opencv\unity\helper\ImageOptimizationHelper.cs" />
      <Compile Include="Assets\OpenCVForUnity\org\opencv\unity\helper\WebCamTextureToMatHelper.cs" />
+     <Compile Include="Assets\pizza.cs" />
+     <Compile Include="Assets\scpr.cs" />
      <None Include="Assets\OpenCVForUnity\StreamingAssets\haarcascade_frontalface_alt.xml" />
      <None Include="Assets\OpenCVForUnity\StreamingAssets\lbpcascade_frontalface.xml" />
      <None Include="Assets\OpenCVForUnity\Plugins\macOS\opencvforunity.bundle\Contents\Resources\gl3w\readme.txt" />
