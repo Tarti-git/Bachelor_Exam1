@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class movement : MonoBehaviour {
 	public OpenCVForUnityExample.HandPoseEstimationExample handpose;
-	public double posx = 0;
-	public double posy = 0;
 	public int nbfingers = 0;
 	public bool take;
-	public bool handler_on;
 	// Use this for initialization
 	void Start () {
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (handler_on == true && handpose.detection_on == true) {
 			Vector3 tmppos = transform.position;
-			tmppos.x = (float)handpose.objpoint.x - 450;
-			tmppos.y = -((float)handpose.objpoint.y - 450);
+			tmppos.x = (float)handpose.objpoint.x - 600;
+			tmppos.y = -((float)handpose.objpoint.y - 600);
 			nbfingers = handpose.numberOfFingers;
 			if (nbfingers > 3)
 				take = true;
@@ -27,14 +23,13 @@ public class movement : MonoBehaviour {
 			if (take == true) {
 				transform.position = tmppos;
 			}
-		}
 	}
 
-	public void switch_handler()
+	public void switch_on()
 	{
-		if (handler_on == false)
-			handler_on = true;
+		if (GetComponent<movement>().enabled == true)
+			GetComponent<movement>().enabled = false;
 		else
-			handler_on = false;
+			GetComponent<movement>().enabled = true;
 	}
 }

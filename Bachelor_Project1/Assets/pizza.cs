@@ -5,10 +5,10 @@ using UnityEngine;
 public class pizza : MonoBehaviour {
 	
 	public OpenCVForUnityExample.HandPoseEstimationExample handpose;
-	public bool handler_on;
 	public int nbfingers = 0;
 	public int incant = 0;
 	public GameObject spawnee;
+	public Transform papa;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,27 +16,25 @@ public class pizza : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (handler_on == true && handpose.detection_on == true) {
 			Vector3 tmppos = transform.position;
 			tmppos.x = (float)handpose.objpoint.x - 450;
 			tmppos.y = -((float)handpose.objpoint.y - 450);
 			nbfingers = handpose.numberOfFingers;
-			if (handpose.numberOfFingers == 5) {
+			if (nbfingers == 5) {
 				incant++;
 			}
-			if (incant >= 25) {
-				Instantiate (spawnee, tmppos, Quaternion.identity);
-				CancelInvoke ();
+			if (incant >= 10) {
+				GameObject pizza = Instantiate (spawnee, tmppos, Quaternion.identity, papa);
 				incant = 0;
+				Destroy (pizza, 20f);
 			}
-		}
 	}
 
-	public void switch_handler()
+	public void switch_on()
 	{
-		if (handler_on == false)
-			handler_on = true;
+		if (GetComponent<pizza>().enabled == true)
+			GetComponent<pizza>().enabled = false;
 		else
-			handler_on = false;
+			GetComponent<pizza>().enabled = true;
 	}
 }

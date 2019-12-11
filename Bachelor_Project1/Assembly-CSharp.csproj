@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\button_pick.cs" />
      <Compile Include="Assets\HandPoseEstimationExample.cs" />
+     <Compile Include="Assets\IA.cs" />
      <Compile Include="Assets\movement.cs" />
      <Compile Include="Assets\OpenCVForUnity\Examples\Advanced\AlphaBlendingExample\AlphaBlendingExample.cs" />
      <Compile Include="Assets\OpenCVForUnity\Examples\Advanced\ComicFilterExample\ComicFilterExample.cs" />
