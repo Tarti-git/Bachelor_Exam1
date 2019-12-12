@@ -17,8 +17,8 @@ public class pizza : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 			Vector3 tmppos = transform.position;
-			tmppos.x = (float)handpose.objpoint.x - 450;
-			tmppos.y = -((float)handpose.objpoint.y - 450);
+			tmppos.x = (float)handpose.objpoint.x - 600;
+			tmppos.y = -((float)handpose.objpoint.y - 600);
 			nbfingers = handpose.numberOfFingers;
 			if (nbfingers == 5) {
 				incant++;

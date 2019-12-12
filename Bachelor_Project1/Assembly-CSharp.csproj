@@ -51,7 +51,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ball.cs" />
      <Compile Include="Assets\button_pick.cs" />
+     <Compile Include="Assets\colli.cs" />
      <Compile Include="Assets\HandPoseEstimationExample.cs" />
      <Compile Include="Assets\IA.cs" />
      <Compile Include="Assets\movement.cs" />

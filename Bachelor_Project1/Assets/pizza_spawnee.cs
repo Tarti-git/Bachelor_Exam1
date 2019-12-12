@@ -18,7 +18,8 @@ public class pizza_spawnee : MonoBehaviour {
 	public void OnCollisionEnter2D(Collision2D col)
 	{
 		if (col.gameObject.tag == "hiwani") {
-			data.health += 5;
+			if (data.health != 0)
+				data.health += 5;
 			data.healthBar.UpdateBar(data.health, 100);
 			Destroy (this.gameObject);
 		}

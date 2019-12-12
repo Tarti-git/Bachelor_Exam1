@@ -6,9 +6,8 @@ public class IA : MonoBehaviour {
 	public Sprite sprite_idle;
 	public Sprite sprite_left;
 	public Sprite sprite_right;
+	public Sprite sprite_dead;
 	public SimpleHealthBar healthBar;
-	public Collision col;
-	public pizza_spawnee food;
 	public int health = 100;
 	int movementSpeed = 100;
 	public int rand;
@@ -21,7 +20,7 @@ public class IA : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (inc == 200) {
-			rand = (int)Random.Range (0, 3);
+			rand = (int)Random.Range (0, 4);
 			health -= 5;
 			healthBar.UpdateBar(health, 100);
 			inc = 0;
@@ -31,13 +30,24 @@ public class IA : MonoBehaviour {
 
 	public void actions()
 	{
-		inc++;
-		if (rand == 0)
-			go_right ();
-		if (rand == 1)
-			go_left ();
-		if (rand == 2)
-			idle ();
+		if (health > 0) {
+			inc++;
+			if (rand == 0)
+				go_right ();
+			if (rand == 1)
+				go_left ();
+			if (rand == 2 || rand == 3)
+				idle ();
+		} else {
+			dead ();
+		}
+	}
+
+	public void dead()
+	{
+		this.GetComponent<SpriteRenderer> ().sprite = sprite_dead;
+		health = 0;
+		transform.Translate (Vector3.zero);
 	}
 
 	public void idle()
