@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class IA : MonoBehaviour {
+	public Sprite sprite_idle;
+	public Sprite sprite_left;
+	public Sprite sprite_right;
+	public SimpleHealthBar healthBar;
+	public Collision col;
+	public pizza_spawnee food;
+	public int health = 100;
 	int movementSpeed = 100;
 	public int rand;
 	public int inc = 0;
@@ -15,6 +22,8 @@ public class IA : MonoBehaviour {
 	void Update () {
 		if (inc == 200) {
 			rand = (int)Random.Range (0, 3);
+			health -= 5;
+			healthBar.UpdateBar(health, 100);
 			inc = 0;
 		}
 		actions ();
@@ -33,16 +42,19 @@ public class IA : MonoBehaviour {
 
 	public void idle()
 	{
+		this.GetComponent<SpriteRenderer> ().sprite = sprite_idle;
 		transform.Translate (Vector3.zero);
 	}
 
 	public void go_right()
 	{
+		this.GetComponent<SpriteRenderer> ().sprite = sprite_right;
 		transform.Translate(Vector3.right * movementSpeed * Time.deltaTime);
 	}
 
 	public void go_left()
 	{
+		this.GetComponent<SpriteRenderer> ().sprite = sprite_left;
 		transform.Translate(Vector3.left * movementSpeed * Time.deltaTime);
 	}
 
